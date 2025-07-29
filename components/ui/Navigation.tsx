@@ -1,11 +1,10 @@
 import React from "react";
-import woostore from '../public/WooStore.svg'
-import account from '../public/account.svg'
+import woostore from '../../public/WooStore.svg'
 import {Heart,Search } from 'lucide-react'
 import Image from "next/image";
 import Link from "next/link";
 import SearchInput from './Search'
-import Cart from "./Cart/Cart";
+import Cart from "../Cart/Cart";
 
 export default async function Navigation(){
 
@@ -30,7 +29,7 @@ type MenuItem = {
     return (
         <>
             <nav>
-                <div className="w-full text-center bg-accent py-1 text-white">
+                <div className="w-full text-center bg-accent py-1 text-sm text-white">
                     Made for artist, Loved by all Shop Now
                 </div>
                     <div className="container mx-auto">

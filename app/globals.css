@@ -22,7 +22,7 @@
 
 @layer base {
   h1{
-    font-size: var(--text-4xl);
+    font-size: var(--large);
     color: var(--color-primary);
   }
 
@@ -62,7 +62,7 @@
   }
 
   .btn {
-    @apply py-2 px-8 outline-1 text-accent rounded-4xl;
+    @apply py-2 px-8 outline-1 text-accent rounded-4xl hover:bg-amber-50 ;
   }
 }
 
@@ -137,6 +137,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --large: 70px;
 }
 
 .dark {

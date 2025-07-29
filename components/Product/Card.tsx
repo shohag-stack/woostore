@@ -1,8 +1,7 @@
-import Button from "./Button";
 import React from 'react'
 import Image from "next/image";
 import { Star } from "lucide-react";
-import {Product} from "../lib/types/types"
+import {Product} from "../../lib/types/types"
 import { useCart } from "@/Context/CartContext";
 
 

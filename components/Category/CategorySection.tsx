@@ -10,8 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
+type headingProps = {
+    title: string,
+    cta: string
+}
 
-export default function CategorySection(){
+export default function CategorySection({title,cta}: headingProps){
 
     const [categories, setCategories] = useState<Category[]>([])
 
@@ -26,7 +30,11 @@ export default function CategorySection(){
     }, [])
 
     return (
-        <div className="w-full">
+        <div className="container mx-auto py-15">
+        <div className="flex justify-between pb-5 items-end">
+            <h4>{title}</h4>
+            <a className="underline" href="">{cta}</a>
+        </div>
         {
             categories.length <= 6 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-7">
@@ -42,7 +50,7 @@ export default function CategorySection(){
                     <CarouselContent>
                         {
                             categories.map((category)=> (
-                                <CarouselItem className="md:basis-1/6" key={category.id}>
+                                <CarouselItem className="md:basis-1/6 sm:basis-3/6" key={category.id}>
                                     <CategoryCard category={category}/>
                                 </CarouselItem>
                             ))

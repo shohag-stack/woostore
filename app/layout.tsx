@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Navigation from "../components/Navigation"
-import { Geist, Geist_Mono } from "next/font/google";
+import Navigation from "../components/ui/Navigation"
 import "./globals.css";
 import "../style/style.css"
 import {CartProvider} from "../Context/CartContext"
@@ -21,7 +20,7 @@ export default function RootLayout({
       <html lang="en"></html>
       <body>
         <Navigation/>
-        <main className="container mx-auto">
+        <main>
         {children}
         </main>
       </body>
