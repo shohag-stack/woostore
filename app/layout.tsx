@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
+import Navigation from "../components/Navigation"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "../style/style.css"
+import {CartProvider} from "../Context/CartContext"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,12 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <CartProvider>
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <html lang="en"></html>
+      <body>
+        <Navigation/>
+        <main className="container mx-auto">
         {children}
+        </main>
       </body>
     </html>
+    </CartProvider>
   );
 }

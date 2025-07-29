@@ -1,0 +1,15 @@
+/* Add to your global CSS file */
+:root {
+  --scrollbar-width: 0px;
+}
+
+body[data-scroll-locked] {
+  padding-right: var(--scrollbar-width);
+  overflow: hidden;
+}
+
+/* If you have fixed headers/navbars */
+[data-scroll-locked] .fixed-header,
+[data-scroll-locked] .fixed-nav {
+  padding-right: var(--scrollbar-width);
+}
