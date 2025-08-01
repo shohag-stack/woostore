@@ -1,45 +1,58 @@
+'use client'
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-export default function Hero(){
 
-    const videos = [
-        "/assets/video-1.mp4",
-        "/assets/video-2.mp4",
-    ]
+type HeroData = {
+  media_url: string;
+  sub_title: string;
+  title: string;
+  type: string;
+};
 
+type Props = {
+    hero: HeroData[]
+}
+
+export default function Hero({hero}:Props) {
+
+    console.log(hero)
     return (
         <>
             <div className="h-[420px] relative w-full overflow-hidden">
                 <Carousel className="h-full"
-                opts={
-                    {
-                        loop:true
+                    opts={
+                        {
+                            loop: true
+                        }
                     }
-                }
-                plugins={[
-                    Autoplay({
-                        delay: 4000,
-                    })
-                ]}
+                    plugins={[
+                        Autoplay({
+                            delay: 3000,
+                        })
+                    ]}
                 >
                     <CarouselContent>
                         {
-                            videos.map((vid,index)=>(
+                            hero.map((item, index) => (
                                 <CarouselItem key={index} >
                                     <div className="w-full h-[420] relative">
                                         <video
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-cover"
-                                        src={vid}>
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-cover"
+                                            src={item.media_url}>
                                         </video>
                                         <div className="absolute top-0 w-full h-full bg-black/20 flex flex-col justify-center items-center text-white text-center p-6">
-                                            <h2 className="text-3xl font-bold mb-2 text-white">Beauty on the Rise {index}</h2>
+                                            <div className="pb-5">
+                                                <h1 className="font-bold text-white"> {item.title} {index}</h1>
+                                                <h6 className="text-white">{item.sub_title}</h6>
+                                            </div>
+                                            <button className="btn border-0 outline-0 bg-white">shop now</button>
                                         </div>
                                     </div>
-                                 </CarouselItem>
+                                </CarouselItem>
                             ))
                         }
                     </CarouselContent>

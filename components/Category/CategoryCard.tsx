@@ -9,8 +9,8 @@ type categoryProps = {
 export default function CategoryCard({category}: categoryProps){
 
     return (
-        <Link href={`${category.slug}`}>
-            <div className="relative w-[196] h-[241] bg-amber-300 cursor-pointer" >
+        <Link className="card" href={`${category.slug}`}>
+            <div className="relative w-[196] h-[241] bg-amber-300 cursor-pointer hover:-translate-y-2 ease-in-out transition-all duration-300" >
             {category.image ? (
                 <Image
                     src={category.image.src}

@@ -1,19 +1,40 @@
-"use client"
 import CategorySection from "@/components/Category/CategorySection";
 import ProductSection from "@/components/Product/ProductSection"
 import Banner from "@/components/About/Banner";
 import Hero from "@/components/About/Hero";
+import BlogSection from "../components/About/BlogSection"
+import InfoSection from "@/components/About/InfoSection";
+import { getProducts, getProductsCategory } from "@/lib/api/products";
+import { getBlogs } from "@/lib/api/blogs";
 
-export default function Home() {
 
+export async function getHeroContent() {
+  const res = await fetch('http://woostore.local/wp-json/woostore/v1/section')
+  const data = await res.json()
+  return data
+}
+
+
+
+export default async function Home() {
+
+  const res = await getHeroContent()
+
+
+  const featureProducts = await getProducts('featured')
+  const recentProducts = await getProducts('recent')
+  const categories = await getProductsCategory()
+  const blogs = await getBlogs()
 
   return (
     <>
-      <Hero/>
-      <CategorySection title="Explore Popular Categories" cta="View all"/>
+      <Hero hero={res.hero}/>
+      <CategorySection categories={categories} title="Explore Popular Categories" cta="View all"/>
       <Banner/>
-      <ProductSection title="Featured Products" cta="View all"/>
-      <ProductSection title="Recently Added" cta="View all"/>
+      <ProductSection products={featureProducts} title="Featured Products" cta="View all"/>
+      <ProductSection products={recentProducts} title="Recently Added" cta="View all"/>
+      <BlogSection blogs={blogs} title="Explore" cta="View all"/>
+      <InfoSection/>
     </>
   );
 }

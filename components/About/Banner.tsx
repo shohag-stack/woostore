@@ -1,12 +1,12 @@
 
 const banner = [
-    "/assets/banner-1.jpg",
-    "/assets/banner-2.jpg"
+    "/assets/banner-3.png",
+    "/assets/banner-4.png"
 ]
 
 export default function Banner() {
     return (
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 overflow-hidden gap-8 pb-10">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 overflow-hidden gap-8 pb-10">
             {banner.map((ban, index) => (
                 <div
                 key={index}

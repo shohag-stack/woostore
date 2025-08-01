@@ -15,7 +15,6 @@ export default function Cart() {
 
   const {cart} = useCart()
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
-  console.log(total)
 
 
     return (

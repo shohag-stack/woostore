@@ -1,44 +1,58 @@
-'use client'
 import Card from "./Card";
-import { useEffect, useState } from "react";
 import {Product} from "../../lib/types/types"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 
 type headingProps = {
     title: string,
     cta: string
+    products: Product[]
 }
 
-export default function ProductSection({title,cta}:headingProps){
+export default function ProductSection({title,cta, products}:headingProps){
   
-
-  const [products, setProducts] = useState <Product[]> ([])
-  
-    useEffect(()=>{
-      const fetchProducts = async ()=> {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_WC_API}/products`)
-        const data = await res.json()
-        setProducts(data)
-      }
-      fetchProducts()
-    }, [])
 
    return (
 
-   <div className="container mx-auto py-10">
+   <div className="container mx-auto py-10 px-4 md:px-0">
       <div className="flex justify-between pb-5 items-end">
               <h4>{title}</h4>
               <a className="underline" href="">{cta}</a>
           </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
 
-              {
-              products.map((product)=> (
-                <Card key={product.id} product={product}/>
-              ))
-            }
-      </div>
+        { products.length <= 4 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-7">
+                  {
+                    products.map((product)=> (
+                  <Card key={product.id} product={product}/>
+                      ))
+                  }
+                  
+                  </div>
+              
+          ) : (
+            <Carousel>
+                    <CarouselContent>
+                        {
+                products.map((product, idx)=> (
+                  <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/4 " key={idx}>
+                      <Card key={product.id} product={product}/>
+                    </CarouselItem>
+                    ))
+                  }
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                    </Carousel>
+          )
+          }
    </div>
   )
 }

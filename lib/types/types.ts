@@ -1,6 +1,7 @@
 export type Product = {
   id: number;
   name: string;
+  permalink: string;
   price: number;
   regular_price: number;
   average_rating: number;
@@ -27,4 +28,49 @@ export type CartItems = {
   image: string;
   quantity: number
 
+}
+
+
+export type Blogs= {
+  id: number;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  }
+  excerpt: {
+    rendered: string;
+  }
+  slug: string;
+  date: string;
+    featured_media: {
+    source_url: string
+  };
+  _embedded ? : {
+      "wp:featuredmedia" ? : [
+        {
+          source_url: string;
+        }
+      ]
+  }
+}
+
+export type MenuItem = {
+  id: number;
+  title: string;
+  url: string;
+};
+
+export type FooterMenuItem = {
+  id: string;
+  title: string;
+  url: string;
+}
+
+// Fix: Footer data structure type
+export type FooterData = {
+  customerCare: FooterMenuItem[];
+  aboutUs: FooterMenuItem[];
+  policies: FooterMenuItem[];
 }

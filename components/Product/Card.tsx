@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import Image from "next/image";
 import { Star } from "lucide-react";
 import {Product} from "../../lib/types/types"
 import { useCart } from "@/Context/CartContext";
+import Link from 'next/link';
 
 
  type CardProps = {
@@ -19,9 +21,11 @@ export default function Card({product} : CardProps) {
 
 
   return (
-    <div className="flex-col space-y-4">
-        <Image width={310} height={310} alt="product" src={product.images[0].src} className=" bg-accent object-contain"/>
-        <div className="flex flex-col space-y-2">
+
+      <div className="flex-col pb-2 pl-1">
+        <Link href={product.permalink}>
+        <Image width={310} height={310} alt="product" src={product.images[0].src} className=" bg-accent object-cover w-[310px] h-[310px]"/>
+        <div className="flex flex-col gap-3 py-4">
             <h6 className="font-bold"> {product.name}</h6>
             <div dangerouslySetInnerHTML={{__html:product.short_description}} ></div>
             <div className="flex space-x-3">
@@ -33,6 +37,7 @@ export default function Card({product} : CardProps) {
                 }
             </div>
         </div>
+        </Link>
         <button
           className="btn"
           onClick={()=> 

@@ -1,5 +1,4 @@
-"use client"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import CategoryCard from "./CategoryCard"
 import { Category } from "@/lib/types/types"
 import {
@@ -13,31 +12,21 @@ import {
 type headingProps = {
     title: string,
     cta: string
+    categories: Category[];
 }
 
-export default function CategorySection({title,cta}: headingProps){
+export default function CategorySection({title,cta, categories}: headingProps){
 
-    const [categories, setCategories] = useState<Category[]>([])
-
-    useEffect( ()=>{
-        const fetchCategory = async()=> {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_WC_API}/categories`)
-            const data =  await response.json()
-            setCategories(data)
-
-        }
-        fetchCategory()
-    }, [])
 
     return (
-        <div className="container mx-auto py-15">
-        <div className="flex justify-between pb-5 items-end">
-            <h4>{title}</h4>
-            <a className="underline" href="">{cta}</a>
-        </div>
+        <div className="container mx-auto py-15 px-4 md:px-0">
+            <div className="flex justify-between pb-5 items-end">
+                <h4>{title}</h4>
+                <a className="underline" href="">{cta}</a>
+            </div>
         {
             categories.length <= 6 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-7">
+                <div className="grid grid-cols-1 md:grid-cols-6 gap-7">
             {
                 categories.map((category)=>(
                     <CategoryCard key={category.id} category={category}/>
@@ -50,7 +39,7 @@ export default function CategorySection({title,cta}: headingProps){
                     <CarouselContent>
                         {
                             categories.map((category)=> (
-                                <CarouselItem className="md:basis-1/6 sm:basis-3/6" key={category.id}>
+                                <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/6 basis-1/" key={category.id}>
                                     <CategoryCard category={category}/>
                                 </CarouselItem>
                             ))
