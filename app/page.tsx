@@ -4,7 +4,7 @@ import Banner from "@/components/About/Banner";
 import Hero from "@/components/About/Hero";
 import BlogSection from "../components/About/BlogSection"
 import InfoSection from "@/components/About/InfoSection";
-import { getProducts, getProductsCategory } from "@/lib/api/products";
+import { getProductsBySlug, getProductsCategory } from "@/lib/api/products";
 import { getBlogs } from "@/lib/api/blogs";
 
 
@@ -21,14 +21,14 @@ export default async function Home() {
   const res = await getHeroContent()
 
 
-  const featureProducts = await getProducts('featured')
-  const recentProducts = await getProducts('recent')
+  const featureProducts = await getProductsBySlug('featured')
+  const recentProducts = await getProductsBySlug('recent')
   const categories = await getProductsCategory()
   const blogs = await getBlogs()
 
   return (
     <>
-      <Hero hero={res.hero}/>
+      {/* <Hero hero={res.hero}/> */}
       <CategorySection categories={categories} title="Explore Popular Categories" cta="View all"/>
       <Banner/>
       <ProductSection products={featureProducts} title="Featured Products" cta="View all"/>
