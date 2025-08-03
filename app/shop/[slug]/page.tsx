@@ -9,6 +9,7 @@ export default async function page({params}: {params : {slug:string}}) {
     return (
         <h1>
                 {res.name}
+                <p>hello from product page</p>
         </h1>
     )
 }

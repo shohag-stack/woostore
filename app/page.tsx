@@ -5,12 +5,12 @@ import RecentProducts from "@/components/Section/RecentProducts";
 import CategorySection from "@/components/Category/CategorySection";
 import BlogSection from "@/components/About/BlogSection"
 import HeroSection from "@/components/Section/HeroSection";
-import ProductCardSkeleton from '../components/Product/ProductCardSkeleton'
+
+const variable = "new section added"
 
 export default async function Home() {
   
-
-  return (
+ return (
     <>
       <HeroSection/>
       <CategorySection/>
