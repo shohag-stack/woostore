@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
             port: '', // Only if applicable, e.g., for localhost with a specific port
             pathname: '/wp-content/uploads/**', // Adjust this to match your image paths
     } ]
-  }
+  },
 };
 
 export default nextConfig;

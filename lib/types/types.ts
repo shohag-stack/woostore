@@ -1,7 +1,7 @@
 export type Product = {
   id: number;
   name: string;
-  permalink: string;
+  slug: string;
   price: number;
   regular_price: number;
   average_rating: number;
@@ -73,4 +73,18 @@ export type FooterData = {
   customerCare: FooterMenuItem[];
   aboutUs: FooterMenuItem[];
   policies: FooterMenuItem[];
+}
+
+
+export type SoloProduct = {
+  id: number;
+  name: string;
+  price: string;
+  regular_price: string;
+  average_rating: string;
+  images:
+    {
+      src: string
+    }
+
 }

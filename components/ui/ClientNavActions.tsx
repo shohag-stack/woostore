@@ -4,12 +4,7 @@ import Cart from "../Cart/Cart"
 import { MenuItem } from "@/lib/types/types"
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
 import Link from "next/link"

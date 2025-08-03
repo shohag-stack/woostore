@@ -23,7 +23,7 @@ export default function Card({product} : CardProps) {
   return (
 
       <div className="flex-col pb-2 pl-1">
-        <Link href={product.permalink}>
+        <Link href={`/shop/${product.slug}`}>
         <Image width={310} height={310} alt="product" src={product.images[0].src} className=" bg-accent object-cover w-[310px] h-[310px]"/>
         <div className="flex flex-col gap-3 py-4">
             <h6 className="font-bold"> {product.name}</h6>

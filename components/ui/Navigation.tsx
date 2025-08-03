@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import woostore from '../../public/WooStore.svg'
 import Image from "next/image";
@@ -5,7 +6,6 @@ import Link from "next/link";
 import SearchInput from './Search'
 import ClientNavActions from "./ClientNavActions";
 
-export default async function Navigation(){
 
 type MenuItem = {
   id: number;
@@ -13,16 +13,11 @@ type MenuItem = {
   url: string;
 };
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/primary`, {
-        next: {
-            revalidate: 10
-        },
-    })
+type Props = {
+  menuItems: MenuItem[];
+};
 
-
-    const data = await res.json()
-
-    const menuItems:MenuItem[] = data || []
+export default function Navigation({menuItems} : Props){
 
     return (
         <>
@@ -38,7 +33,9 @@ type MenuItem = {
                                         </div>
 
                                         <div className="flex md:justify-center justify-start">
-                                            <Image alt="woostore" src={woostore}/> 
+                                            <Link href='/'>
+                                                <Image alt="woostore" src={woostore}/>
+                                            </Link> 
                                         </div>
 
                                         <div>

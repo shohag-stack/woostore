@@ -16,6 +16,7 @@ type Props = {
 export default function Hero({hero}:Props) {
 
     console.log(hero)
+
     return (
         <>
             <div className="h-[420px] relative w-full overflow-hidden">
@@ -46,7 +47,7 @@ export default function Hero({hero}:Props) {
                                         </video>
                                         <div className="absolute top-0 w-full h-full bg-black/20 flex flex-col justify-center items-center text-white text-center p-6">
                                             <div className="pb-5">
-                                                <h1 className="font-bold text-white"> {item.title} {index}</h1>
+                                                <h1 className="font-bold text-white"> {item.title}</h1>
                                                 <h6 className="text-white">{item.sub_title}</h6>
                                             </div>
                                             <button className="btn border-0 outline-0 bg-white">shop now</button>

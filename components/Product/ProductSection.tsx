@@ -17,7 +17,6 @@ type headingProps = {
 
 export default function ProductSection({title,cta, products}:headingProps){
   
-
    return (
 
    <div className="container mx-auto py-10 px-4 md:px-0">
@@ -41,8 +40,8 @@ export default function ProductSection({title,cta, products}:headingProps){
             <Carousel>
                     <CarouselContent>
                         {
-                products.map((product, idx)=> (
-                  <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/4 " key={idx}>
+                products.map((product)=> (
+                  <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/4 " key={product.id}>
                       <Card key={product.id} product={product}/>
                     </CarouselItem>
                     ))

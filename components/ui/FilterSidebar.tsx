@@ -19,9 +19,7 @@ export default function FilterSidebar({categories} : {categories: any[]} ) {
     router.push(`/shop?${params}`)
   }
    
-  
-  
-  
+
   return (
         <aside className="left-filter w-1/4 pr-4">
       <h5 className="font-semibold mb-2">Categories</h5>

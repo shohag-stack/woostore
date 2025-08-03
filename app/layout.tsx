@@ -17,11 +17,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
+   const res = await fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/primary`, {
+    next: {
+      revalidate: 60 * 60,
+    },
+  });
+
+  const data = await res.json();
+
   return (
     <CartProvider>
     <html lang="en">
       <body>
-        <Navigation/>
+        <Navigation menuItems={data}/>
         <main>
         {children}
         </main>
