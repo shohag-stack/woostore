@@ -24,7 +24,19 @@ export default function Card({product} : CardProps) {
 
       <div className="flex-col pb-2 pl-1">
         <Link href={`/shop/${product.slug}`}>
-        <Image width={310} height={310} alt="product" src={product.images[0].src} className=" bg-accent object-cover w-[310px] h-[310px]"/>
+        {product.images?.length > 0 ? (
+      <Image
+        width={310}
+        height={310}
+        alt={product.name}
+        src={product.images[0].src}
+        className="bg-accent object-cover w-[310px] h-[310px]"
+      />
+    ) : (
+    <div className="w-[310px] h-[310px] bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+      No image available
+    </div>
+  )}
         <div className="flex flex-col gap-3 py-4">
             <h6 className="font-bold"> {product.name}</h6>
             <div dangerouslySetInnerHTML={{__html:product.short_description}} ></div>
