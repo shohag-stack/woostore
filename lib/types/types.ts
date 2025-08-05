@@ -2,7 +2,7 @@ export type Product = {
   id: number;
   name: string;
   slug: string;
-  price: number;
+  sale_price: number;
   regular_price: number;
   average_rating: number;
   short_description: string;

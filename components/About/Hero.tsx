@@ -15,7 +15,6 @@ type Props = {
 
 export default function Hero({hero}:Props) {
 
-    console.log(hero)
 
     return (
         <>
@@ -50,7 +49,7 @@ export default function Hero({hero}:Props) {
                                                 <h1 className="font-bold text-white"> {item.title}</h1>
                                                 <h6 className="text-white">{item.sub_title}</h6>
                                             </div>
-                                            <button className="btn border-0 outline-0 bg-white">shop now</button>
+                                            <button className="btn-secondary">shop now</button>
                                         </div>
                                     </div>
                                 </CarouselItem>

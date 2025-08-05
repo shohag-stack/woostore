@@ -6,8 +6,9 @@ import { SidebarSekeleton } from "@/components/ui/SidebarSkeleton"
 import ShopPageSekeleton from "@/components/Product/ShopPageSekeleton"
 
 
-export default async function Page({searchParams}:{searchParams:{category? : string}}){
-    const categoryId = searchParams.category
+export default async function Page({searchParams}:{searchParams:{search? : string, category: string}}){
+    const productSlug = await searchParams.search
+    const categoryId = await searchParams.category
     return (
         <>
         <Banner/>
@@ -17,8 +18,8 @@ export default async function Page({searchParams}:{searchParams:{category? : str
                 <FilterSidebarWrap />
             </Suspense> 
             </aside>
-            <Suspense key={categoryId} fallback={<ShopPageSekeleton/>}>
-                <ProductListWrap categoryId={categoryId}/>
+            <Suspense key={productSlug} fallback={<ShopPageSekeleton/>}>
+                <ProductListWrap productSlug={productSlug} categoryId={!productSlug ? categoryId : undefined}/>
             </Suspense>
         </div>
         </>

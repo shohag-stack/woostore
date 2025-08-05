@@ -14,14 +14,29 @@ export async function getProductsBycatId(categoryId?:string){
 
 // fetch product by product ID
 
-export async function getProductsBySlug(productSlug:string){ 
+export async function getProductsBySlug(productSlug:any){ 
     const url = new URL(`${process.env.NEXT_PUBLIC_WOOSTORE_SHOP_DATA}`)
      url.searchParams.set("slug", productSlug)
+     console.log(url)
     const response = await fetch(url.toString(), {
       next: {
         revalidate: 60
       }
     })
     const data = await response.json()
-    return data[0] || []
+    return data[0]
+}
+
+export async function getProductsBySearch(productSlug:any){ 
+    const url = new URL(`${process.env.NEXT_PUBLIC_WOOSTORE_SHOP_DATA}`)
+     url.searchParams.set("search", productSlug)
+     console.log(url)
+    const response = await fetch(url.toString(), {
+      next: {
+        revalidate: 60
+      }
+    })
+    const data = await response.json()
+    console.log(data)
+    return data
 }

@@ -1,10 +1,11 @@
 'use client'
 import React from 'react'
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Star,Loader,Check } from "lucide-react";
 import {Product} from "../../lib/types/types"
 import { useCart } from "@/Context/CartContext";
 import Link from 'next/link';
+import { useState } from 'react';
 
 
  type CardProps = {
@@ -14,15 +15,40 @@ import Link from 'next/link';
 
 export default function Card({product} : CardProps) {
 
-
+  const [isLoading, setIsLoading] = useState(false)
+  const [added, setAdded] = useState(false)
   const totalStars = product.average_rating
-  const discount = Math.round(((product.regular_price - product.price) / product.regular_price) * 100);
+  const discount = Math.round(((product.regular_price - product.sale_price) / product.regular_price) * 100);
   const {addToCart} = useCart()
+
+  const handleAddtoCart = async ()=> {
+    setIsLoading(true);
+    setAdded(false)
+    try {
+    console.log(isLoading)
+    setAdded(false)
+    addToCart({
+            id: product.id,
+            title: product.name,
+            price: product.sale_price,
+            quantity: 1,
+            image: product.images[0].src
+          })
+    }
+    
+    finally{
+      setIsLoading(false)
+      setAdded(true)
+      setTimeout(() => setAdded(false), 2000);
+
+    }
+
+  }
 
 
   return (
 
-      <div className="flex-col pb-2 pl-1">
+      <div className="flex-col pb-2 pl-1 group ">
         <Link href={`/shop/${product.slug}`}>
         {product.images?.length > 0 ? (
       <Image
@@ -30,7 +56,7 @@ export default function Card({product} : CardProps) {
         height={310}
         alt={product.name}
         src={product.images[0].src}
-        className="bg-accent object-cover w-[310px] h-[310px]"
+        className="bg-accent object-cover w-[310px] h-[310px] transition-transform duration-300 ease-in-out group-hover:scale-105"
       />
     ) : (
     <div className="w-[310px] h-[310px] bg-gray-100 flex items-center justify-center text-sm text-gray-500">
@@ -41,7 +67,7 @@ export default function Card({product} : CardProps) {
             <h6 className="font-bold"> {product.name}</h6>
             <div dangerouslySetInnerHTML={{__html:product.short_description}} ></div>
             <div className="flex space-x-3">
-                <h6 className="font-bold">${product.price} - ${product.regular_price}</h6> <span className="bg-green-50 px-1.5 text-accent"> {discount}% OFF </span>
+                <h6 className="font-bold">${product.sale_price} - ${product.regular_price}</h6> <span className="bg-green-50 px-1.5 text-accent"> {discount}% OFF </span>
             </div>
             <div className="flex space-x-1.5">
                 {
@@ -51,18 +77,22 @@ export default function Card({product} : CardProps) {
         </div>
         </Link>
         <button
-          className="btn"
-          onClick={()=> 
-            addToCart({
-            id: product.id,
-            title: product.name,
-            price: product.price,
-            quantity: 1,
-            image: product.images[0].src
-          })
-          }
+          className="btn flex"
+          onClick={handleAddtoCart}
+          disabled={isLoading}
         > 
-          Add To Cart
+          {isLoading ? (
+            <>
+          <Loader className="mr-3 size-5 animate-spin"/>
+          Processing ...
+          </>
+        ) : added ? (
+          <>
+            <Check/> Added
+          </>
+        ) : (
+          "Add to Cart"
+        )}
           </button>
     </div>
   )

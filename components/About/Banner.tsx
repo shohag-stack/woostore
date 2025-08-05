@@ -17,7 +17,7 @@ export default function Banner() {
                 <h5 className="mb-4 text-white">
                     Meet the buzzy products filling baskets for all the right reasons.
                 </h5>
-                <button className="bg-white btn hover:bg-gray-300 transition">
+                <button className="btn-primary">
                     Shop now
                 </button>
                 </div>

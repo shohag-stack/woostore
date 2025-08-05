@@ -1,14 +1,42 @@
-import Form from 'next/form'
+'use client'
 import {Search} from "lucide-react"
-import Image from 'next/image'
+import { useSearchParams,useRouter } from 'next/navigation'
+import { useDebounce } from '@uidotdev/usehooks'
+import { useEffect, useState } from "react"
  
 export default function SearchInput() {
+  
+  const [searchTerm, setSearchTerm] = useState('')
+  const debounceTerm:any = useDebounce(searchTerm, 500)
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  const handleSearch = (term:string)=> {
+    const newParams = new URLSearchParams(searchParams)
+    if(term) {
+      newParams.delete("search")
+      newParams.set("search", term)
+    }
+    else {
+      newParams.delete("search")
+    }
+    router.replace(`/search?${newParams.toString()}`)
+    
+  }
+
+  useEffect(()=>{
+    if (debounceTerm === '' && !searchParams.get('search')) return
+      handleSearch(debounceTerm)
+  }, [debounceTerm])
+
+
   return (
-    <Form action="/search" className='relative'>
-      {/* On submission, the input value will be appended to
-          the URL, e.g. /search?query=abc */}
+    <div className='relative'>
         <Search className="w-5 h-5 absolute left-10 top-1/2 transform -translate-y-1/2 text-primary" />
-      <input className='py-4 px-20 placeholder:text-grey-100 focus:outline-none' name="query" placeholder='Search 150+ Products' />
-    </Form>
+      <input 
+      onChange={(e)=>setSearchTerm(e.target.value)}
+      defaultValue={searchParams.toString()}
+      className='py-4 px-20 placeholder:text-grey-100 focus:outline-none' name="search" placeholder='Search 150+ Products' />
+    </div>
   )
 }
