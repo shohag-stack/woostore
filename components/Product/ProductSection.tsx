@@ -27,7 +27,7 @@ export default function ProductSection({title,cta, products}:headingProps){
 
 
         { products.length <= 4 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-7">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-7">
                   {
                     products.map((product)=> (
                   <Card key={product.id} product={product}/>

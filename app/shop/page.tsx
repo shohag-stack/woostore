@@ -12,7 +12,7 @@ export default async function Page({searchParams}:{searchParams:{category? : str
         <>
         <Banner/>
         <div className="shop-container container mx-auto flex">
-            <aside className="left-filter w-1/4">
+            <aside className="left-filter sm:w-1/4 hidden sm:block">
             <Suspense fallback={<SidebarSekeleton/>}>
                 <FilterSidebarWrap />
             </Suspense> 

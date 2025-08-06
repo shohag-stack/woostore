@@ -21,7 +21,7 @@ export default function Navigation({menuItems} : Props){
 
     return (
         <>
-            <nav className="border-b-1">
+            <nav className="border-b-1 static top-0">
                 <div className="w-full text-center bg-accent py-1 text-sm text-white">
                     Made for artist, Loved by all Shop Now
                 </div>

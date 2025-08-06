@@ -7,7 +7,7 @@ import BlogSection from "@/components/About/BlogSection"
 import HeroSection from "@/components/Section/HeroSection";
 import ProductCardSkeleton from '../components/Product/ProductCardSkeleton'
 
-export default async function Home() {
+export default async function page() {
   
 
   return (

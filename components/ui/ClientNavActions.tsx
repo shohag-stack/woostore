@@ -8,6 +8,8 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 import Link from "next/link"
+
+
 type props = {
     menuItems: MenuItem[]
 }
@@ -17,7 +19,7 @@ export default function ({menuItems}:props) {
         <div className="flex justify-end space-x-3">
             <Search className="md:hidden"/>
             <Heart/>
-            <Cart/> 
+            <Cart/>
             <Drawer  direction="right">
                     <DrawerTrigger asChild>
                         <Menu className="md:hidden"/>
