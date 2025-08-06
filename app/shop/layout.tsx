@@ -1,5 +1,5 @@
 import BreadCrumbs from "../../components/ui/Breadcrumbs"
-export default function layout({children}: Readonly<{
+export default function Layout({children}: Readonly<{
     children: React.ReactNode
 }>){
     return (

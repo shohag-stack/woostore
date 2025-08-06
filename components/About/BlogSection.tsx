@@ -1,10 +1,13 @@
 import React from "react"
 import BlogCard from "./BlogCard"
-import { getBlogs } from "@/lib/api/blogs"
+import { Blogs } from "@/lib/types/types";
+import { getBlogs } from "@/lib/api/blogs";
+
 
 export default async function BlogSection(){
 
-    const blogs = await getBlogs()
+    const data = await getBlogs()
+    const blogs = data.slice(0,10)
 
     return (
         <div className="container mx-auto py-15 px-4 md:px-0">
@@ -14,7 +17,7 @@ export default async function BlogSection(){
         </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-7">
             {
-                blogs.map((blog:any)=>(
+                blogs.map((blog:Blogs)=>(
 
                     <div key={blog.id}>
                         <BlogCard blog={blog}/>

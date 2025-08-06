@@ -5,9 +5,8 @@ import RecentProducts from "@/components/Section/RecentProducts";
 import CategorySection from "@/components/Category/CategorySection";
 import BlogSection from "@/components/About/BlogSection"
 import HeroSection from "@/components/Section/HeroSection";
-import ProductCardSkeleton from '../components/Product/ProductCardSkeleton'
 
-export default async function page() {
+export default async function Page() {
   
 
   return (

@@ -1,13 +1,11 @@
 import BlogSection from "../../components/About/BlogSection"
-import {getBlogs} from "../../lib/api/blogs"
 
-export default async function page(){
-    const data = await getBlogs()
-    const blogs = data.slice(0,10)
+export default async function Page(){
     return (
         <>
-        <BlogSection title="Featured News" cta="" blogs={blogs}/>
-        <BlogSection title="Recently Added" cta="" blogs={blogs}/>
+        <h1>hello</h1>
+        <BlogSection />
+        <BlogSection/>
         </>
     )
 }

@@ -1,12 +1,10 @@
 'use client'
-import EmptyCart from "@/components/Cart/EmptyCart"
 import { Information } from "@/components/Product/Information"
 import ShippingInfo from "@/components/Product/ShippingInfo"
 import { useState } from "react"
-import CheckoutCart from "@/components/Product/CheckoutCart"
 
 
-export default function page(){
+export default function Page(){
     const [step, setStep] = useState(1)
     const checkoutStep = ()=> {
         switch(step) {

@@ -28,7 +28,7 @@ return {
 
 }
 
-export default async function SingleBlog({params} : Props) {
+export default async function Page({params} : Props) {
 const {blog, featuredImage} = await getBlogBySlug(params.slug)
 console.log(featuredImage)
 if (!blog) notFound()
