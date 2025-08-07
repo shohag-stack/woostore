@@ -24,7 +24,8 @@ export type Category = {
 export type CartItems = {
   id: number;
   title:string;
-  price: number;
+  regular_price: number
+  price: number
   image: string;
   quantity: number
 

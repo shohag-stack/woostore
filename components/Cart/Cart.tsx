@@ -73,7 +73,7 @@ export default function Cart() {
                       <h6>Sub Total</h6>
                       <p> {cart.length} items</p>
                     </div>
-                    <h6>${total}</h6>
+                    <h6>${total.toFixed(2)}</h6>
                   </div>
 
                   <div className="flex justify-between border-b-1 py-2">

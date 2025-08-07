@@ -18,7 +18,16 @@ export default function Card({product} : CardProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [added, setAdded] = useState(false)
   const totalStars = product.average_rating
-  const discount = Math.round(((product.regular_price - product.sale_price) / product.regular_price) * 100);
+  const regular = Number(product?.regular_price)
+  const sale = Number(product?.sale_price)
+
+  const discount =
+    regular > 0 && sale > 0
+      ? Math.round(100 - (sale * 100) / regular)
+      : null;
+      const price = product.sale_price && Number(product.sale_price) > 0
+  ? Number(product.sale_price)
+  : Number(product.regular_price)
   const {addToCart} = useCart()
 
   const handleAddtoCart = async ()=> {
@@ -30,9 +39,10 @@ export default function Card({product} : CardProps) {
     addToCart({
             id: product.id,
             title: product.name,
-            price: product.sale_price,
+            regular_price: regular,
+            price,
             quantity: 1,
-            image: product.images[0].src
+            image: product?.images[0]?.src
           })
     }
     
@@ -59,7 +69,7 @@ export default function Card({product} : CardProps) {
         className="bg-accent object-cover w-[310px] h-[310px] transition-transform duration-300 ease-in-out group-hover:scale-105"
       />
     ) : (
-    <div className="w-[310px] h-[310px] bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+    <div className="w-full h-[310px] bg-gray-100 flex items-center justify-center text-sm text-gray-500">
       No image available
     </div>
   )}
@@ -67,7 +77,15 @@ export default function Card({product} : CardProps) {
             <h6 className="font-bold"> {product.name}</h6>
             <div dangerouslySetInnerHTML={{__html:product.short_description}} ></div>
             <div className="flex space-x-3">
-                <h6 className="font-bold">${product.sale_price} - ${product.regular_price}</h6> <span className="bg-green-50 px-1.5 text-accent"> {discount}% OFF </span>
+                {product.sale_price && product.sale_price !== product.regular_price ? (
+              <>
+                <span className="line-through text-gray-500">${product.regular_price}</span>
+                <span className="font-bold text-accent">${product.sale_price}</span>
+                {discount && <span className="bg-green-50 px-1.5 text-accent"> {discount} % OFF </span>}
+              </>
+            ) : (
+              <span className="font-bold">${product.regular_price}</span>
+            )}
             </div>
             <div className="flex space-x-1.5">
                 {

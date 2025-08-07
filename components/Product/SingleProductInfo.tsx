@@ -7,7 +7,7 @@ import { Product } from "@/lib/types/types"
 
 type productProps = {
     product: Product;
-    discount: number;
+    discount?: number | null
     id: number;
 }
 
@@ -18,6 +18,9 @@ export default function SingleProductInfo({product, discount,id}:productProps) {
     const currentProduct = cart.find(item=> item.id ===id)
     const currentProductQuantity = currentProduct ? currentProduct.quantity : 0
     const [input, setInput] = useState(currentProductQuantity || 1)
+    const price = product.sale_price && Number(product.sale_price) > 0
+    ? Number(product.sale_price)
+    : Number(product.regular_price)
 
 
     const handleDecrement = () => {
@@ -40,15 +43,25 @@ export default function SingleProductInfo({product, discount,id}:productProps) {
 
     return (
         <div className="flex flex-col gap-3 py-4">
-                <h3 className="font-bold"> {product.name}</h3>
-                    <div dangerouslySetInnerHTML={{__html:product.short_description}} ></div>
+                <h3 className="font-bold"> {product?.name}</h3>
+                    <div dangerouslySetInnerHTML={{__html:product?.short_description}} ></div>
                     <div className="flex space-x-3">
-                        <h6 className="font-bold">${product.sale_price} -  </h6> <h6 className=" font-bold line-through">${product.regular_price}</h6>  
-                        <span className="bg-green-50 px-1.5 text-accent"> {discount} % OFF </span>
+                        {product.sale_price && product.sale_price !== product.regular_price ? (
+                        <>
+                            <span className="line-through text-gray-500">${product.regular_price}</span>
+                            <span className="font-bold text-accent">${product.sale_price}</span>
+                            <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded text-sm font-medium">
+                            {discount}% OFF
+                            </span>
+                        </>
+                        ) : (
+                        <span className="font-bold">${product.regular_price}</span>
+                        )} 
+                        {discount && <span className="bg-green-50 px-1.5 text-accent"> {discount} % OFF </span>}
                     </div>
                 <div className="flex space-x-1.5">
                         {
-                        [...Array(product.average_rating)].map((_,index)=> <Star className="text-accent" fill="currentColor" key={index} size={18}/> )
+                        [...Array(product?.average_rating)].map((_,index)=> <Star className="text-accent" fill="currentColor" key={index} size={18}/> )
                         }
                 </div>
             
@@ -65,7 +78,8 @@ export default function SingleProductInfo({product, discount,id}:productProps) {
                         id: product.id,
                         title: product.name,
                         image: product.images?.[0]?.src || "/fallback.png",
-                        price: product.sale_price,
+                        regular_price: product.regular_price,
+                        price,
                         quantity: input,
                     })}>Add To Cart</button>
                 </div>

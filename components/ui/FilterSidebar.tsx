@@ -30,7 +30,7 @@ function FilterSidebar({categories} : catProps ) {
         <aside className="left-filter w-1/4 pr-4">
       <h5 className="font-semibold mb-2">Categories</h5>
       <ul>
-        {categories.map((cat:Category) => (
+        {categories?.map((cat:Category) => (
           <li key={cat.id}>
             <button
               onClick={() => handleCategoryClick(cat.id)}

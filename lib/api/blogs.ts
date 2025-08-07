@@ -1,4 +1,3 @@
-import { Blogs } from "../types/types"
 
 // fetch blog post //
 export async function getBlogBySlug(slug:string) {

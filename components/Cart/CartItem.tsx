@@ -26,14 +26,14 @@ export default function CartItem({item}: cartProps){
                     <div className="flex flex-row ml-1.5">
                       <a className="flex flex-col flex-1" href="">
                         <h6 className="font-medium">{item.title}</h6>
-                        <h6 className="text-secondary">{`$${item.price}`}</h6>
+                        ${ Number(item.regular_price).toFixed(2)}
                       </a>
                     </div>
                   </div>
 
                   <div className=" flex flex-row text-right">
                       <div className="flex flex-col justify-between">
-                        <h6>${item.quantity * item.price}</h6>
+                        <h6>${(Number(item.quantity) * Number(item.price)).toFixed(2)}</h6>
                         <div className="flex gap-4">
                               <div className=" flex justify-between py-1 px-3 border-b-neutral-200 border rounded-full gap-3" >
                                   <button onClick={()=> updateQuantity(item.id, -1)}><Minus size={14}/> </button>

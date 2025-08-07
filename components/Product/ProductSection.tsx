@@ -16,6 +16,8 @@ type headingProps = {
 }
 
 export default function ProductSection({title,cta, products}:headingProps){
+
+  console.log(products)
   
    return (
 
@@ -26,7 +28,7 @@ export default function ProductSection({title,cta, products}:headingProps){
           </div>
 
 
-        { products.length <= 4 ? (
+        { Array.isArray(products) && products.length <= 4 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-7">
                   {
                     products.map((product)=> (
@@ -40,7 +42,7 @@ export default function ProductSection({title,cta, products}:headingProps){
             <Carousel>
                     <CarouselContent>
                         {
-                products.map((product)=> (
+                Array.isArray(products) && products.map((product)=> (
                   <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/4 " key={product.id}>
                       <Card key={product.id} product={product}/>
                     </CarouselItem>
