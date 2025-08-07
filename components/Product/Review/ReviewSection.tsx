@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button"
 import AverageReview from "./AverageReview"
 import CustomerReview from './CustomerReview'
-
-
-
 
 export default async function ReviewSection(){
     return (

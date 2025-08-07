@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 export default function SearchInput() {
   
   const [searchTerm, setSearchTerm] = useState('')
-  const debounceTerm:any = useDebounce(searchTerm, 500)
+  const debounceTerm:string = useDebounce(searchTerm, 500)
   const searchParams = useSearchParams()
   const router = useRouter()
 

@@ -13,7 +13,7 @@ export async function getHomePageData() {
     }
 
     catch(err) {
-        throw new Error("Failed to load the home_page Data")
+        console.log(err)
     }
 }
 

@@ -3,10 +3,15 @@ import {Star,Minus,Plus} from "lucide-react"
 import { useState } from "react"
 import { useCart } from "@/Context/CartContext"
 import Image from "next/image"
+import { Product } from "@/lib/types/types"
 
+type productProps = {
+    product: Product;
+    discount: number;
+    id: number;
+}
 
-
-export default function SingleProductInfo({product, discount,id}:any) {
+export default function SingleProductInfo({product, discount,id}:productProps) {
 
     const {cart} = useCart()
     const {addToCart} = useCart()

@@ -2,6 +2,7 @@ import React from "react"
 import BlogCard from "./BlogCard"
 import { Blogs } from "@/lib/types/types";
 import { getBlogs } from "@/lib/api/blogs";
+import Link from "next/link";
 
 
 export default async function BlogSection(){
@@ -13,7 +14,7 @@ export default async function BlogSection(){
         <div className="container mx-auto py-15 px-4 md:px-0">
         <div className="flex justify-between pb-5 items-end">
             <h4>Explore</h4>
-            <a className="underline" href="/blog">View all</a>
+            <Link className="underline" href="/blog">View all</Link>
         </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-7">
             {

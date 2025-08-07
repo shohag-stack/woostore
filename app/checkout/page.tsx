@@ -4,7 +4,7 @@ import ShippingInfo from "@/components/Product/ShippingInfo"
 import { useState } from "react"
 
 
-export default function page(){
+export default function Page(){
     const [step, setStep] = useState(1)
     const checkoutStep = ()=> {
         switch(step) {

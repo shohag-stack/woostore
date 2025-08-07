@@ -1,4 +1,3 @@
-
 // fetch products by specific-category ID //
 
 export async function getProductsBycatId(categoryId?:string){
@@ -14,7 +13,7 @@ export async function getProductsBycatId(categoryId?:string){
 
 // fetch product by product ID
 
-export async function getProductsBySlug(productSlug:any){ 
+export async function getProductsBySlug(productSlug:string){ 
     const url = new URL(`${process.env.NEXT_PUBLIC_WOOSTORE_SHOP_DATA}`)
      url.searchParams.set("slug", productSlug)
      console.log(url)
@@ -27,7 +26,7 @@ export async function getProductsBySlug(productSlug:any){
     return data[0]
 }
 
-export async function getProductsBySearch(productSlug:any){ 
+export async function getProductsBySearch(productSlug:string){ 
     const url = new URL(`${process.env.NEXT_PUBLIC_WOOSTORE_SHOP_DATA}`)
      url.searchParams.set("search", productSlug)
      console.log(url)

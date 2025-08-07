@@ -1,7 +1,7 @@
 import { Blogs } from "../types/types"
 
 // fetch blog post //
-export async function getBlogBySlug(slug:string): Promise<{blog:Blogs, featuredImage: any}>{
+export async function getBlogBySlug(slug:string): Promise<{blog:Blogs, featuredImage: string}>{
   const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?slug=${slug}`, {next: { revalidate: 3600 }})
   const posts: Blogs[] = await res.json();
   const blog = posts[0]
