@@ -25,7 +25,7 @@ export default async function CategorySection(){
             homeData.categories.length <= 6 ? (
                 <div className="grid grid-cols-1 md:grid-cols-6 gap-7">
             {
-                homeData.categories.map((category:any)=>(
+                homeData.categories.map((category:Category)=>(
                     <CategoryCard key={category.id} category={category}/>
                 ))
             }
@@ -35,7 +35,7 @@ export default async function CategorySection(){
                     <Carousel>
                     <CarouselContent>
                         {
-                            homeData.categories.map((category:any)=> (
+                            homeData.categories.map((category:Category)=> (
                                 <CarouselItem className="sm:basis-1/3 md:basis-2/7 lg:basis-1/6 basis-1/" key={category.id}>
                                     <CategoryCard category={category}/>
                                 </CarouselItem>

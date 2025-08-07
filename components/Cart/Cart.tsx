@@ -26,7 +26,7 @@ export default function Cart() {
             <div className="relative" onClick={()=>setOpen(true)} >
               <ShoppingCart className="relative"/>
                 {
-                 cart.length > 0 && <button className="absolute top-[-4] right-[-13] bg-red-500 rounded-full text-white z-10 w-5 h-5 text-[12px] font-medium">{cart.length}</button>
+                 cart.length > 0 && <div className="absolute top-[-4] right-[-13] bg-red-500 rounded-full text-white z-10 w-5 h-5 text-[12px] font-medium">{cart.length}</div>
                 }
             </div> 
         </DrawerTrigger>

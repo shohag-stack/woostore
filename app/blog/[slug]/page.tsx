@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import Image from "next/image"
 import { getBlogBySlug } from "@/lib/api/blogs"
+import { Blogs } from "@/lib/types/types"
 
 type Props = {
    params: {
@@ -12,7 +13,7 @@ type Props = {
 export async function generateStaticParams() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`)
     const posts = await res.json()
-    return posts.map((post:any)=> 
+    return posts.map((post:Blogs)=> 
     ({
         slug: post.slug
     })

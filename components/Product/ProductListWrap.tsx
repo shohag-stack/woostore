@@ -1,5 +1,6 @@
 import { getProductsBycatId, getProductsBySearch } from "@/lib/api/products"
 import Card from "./Card"
+import { Product } from "@/lib/types/types"
 
 
 
@@ -18,7 +19,7 @@ export default async function ProductListWrap({categoryId, productSlug} : {categ
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                                 {products?.length ? (
                             
-                            products.map((product:any) => (
+                            products.map((product:Product) => (
                                 <Card key={product.id} product={product} />
                             ))
                             ) : (

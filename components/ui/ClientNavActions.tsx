@@ -13,7 +13,7 @@ import Link from "next/link"
 type props = {
     menuItems: MenuItem[]
 }
-export default function ({menuItems}:props) {
+export default function ClientNavActions ({menuItems}:props) {
 
     return (
         <div className="flex justify-end space-x-3">

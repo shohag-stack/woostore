@@ -3,17 +3,14 @@ import {Plus,Minus,X  } from "lucide-react"
 import { CartItems } from "@/lib/types/types"
 import Image from "next/image"
 import { useCart } from "@/Context/CartContext"
-import { useState } from "react"
 
  type cartProps = {
     item: CartItems
  }
 
-
 export default function CartItem({item}: cartProps){
 
-    const {updateQuantity, setQuantity, removeFromCart} = useCart()
-    const [input, setInput] = useState((item?.quantity ?? 1).toString())
+    const {updateQuantity, removeFromCart} = useCart()
 
     return (
             <div className="relative flex flex-row py-4 px-4 text-left gap-3 w-full overflow-hidden justify-between outline-secondary" >

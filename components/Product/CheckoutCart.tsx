@@ -1,17 +1,6 @@
 "use client"
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
-import { ShoppingCart,X } from "lucide-react"
 import CartItem from "../Cart/CartItem";
 import { useCart } from "@/Context/CartContext";
-import Link from "next/link";
-import { useState } from "react";
 
 
 export default function CheckoutCart() {

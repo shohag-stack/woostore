@@ -1,8 +1,13 @@
 'use client'
 
 import { useRouter, useSearchParams } from "next/navigation"
+import { Category } from "@/lib/types/types"
 
-export default function FilterSidebar({categories} : {categories: any[]} ) {
+type catProps = {
+  categories: Category[]
+}
+
+export default function FilterSidebar({categories} : catProps ) {
   const router = useRouter()
   const searchParams = useSearchParams()  
     
@@ -24,7 +29,7 @@ export default function FilterSidebar({categories} : {categories: any[]} ) {
         <aside className="left-filter w-1/4 pr-4">
       <h5 className="font-semibold mb-2">Categories</h5>
       <ul>
-        {categories.map((cat:any) => (
+        {categories.map((cat:Category) => (
           <li key={cat.id}>
             <button
               onClick={() => handleCategoryClick(cat.id)}
