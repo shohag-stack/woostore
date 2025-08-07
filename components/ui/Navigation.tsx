@@ -50,7 +50,7 @@ export default function Navigation({menuItems} : Props){
                             <div className="hidden md:block text-center flex justify-center space-x-4 py-4 ">
                                 {
                                     menuItems.map((item)=> (
-                                        <a key={item.id} href={item.url}> { item.title }</a>
+                                        <Link key={item.id} href={item.url}> { item.title }</Link>
                                     ))
                                 }
                                 <a href="/blog"> Blog</a>

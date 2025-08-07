@@ -1,5 +1,5 @@
 'use client'
-import { Search, Heart, Menu,X } from "lucide-react"
+import { Search, Heart, Menu } from "lucide-react"
 import Cart from "../Cart/Cart"
 import { MenuItem } from "@/lib/types/types"
 import {
