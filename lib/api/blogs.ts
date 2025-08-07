@@ -17,7 +17,7 @@ export async function getBlogBySlug(slug:string) {
 
 // // fetch all blog posts //
 export async function getBlogs(){
-    const blogs = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?_embed`,{next:{revalidate:60 * 60}}).then(res=> res.json())
+    const blogs = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?_embed`,{next:{revalidate:60}}).then(res=> res.json())
     return  blogs
 
 }
