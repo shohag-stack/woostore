@@ -28,11 +28,11 @@ export default function Card({product} : CardProps) {
     console.log(isLoading)
     setAdded(false)
     addToCart({
-            id: product.id,
-            title: product.name,
-            price: product.sale_price,
+            id: product?.id,
+            title: product?.name,
+            price: product?.sale_price,
             quantity: 1,
-            image: product.images[0].src
+            image: product?.images[0]?.src
           })
     }
     
@@ -50,7 +50,7 @@ export default function Card({product} : CardProps) {
 
       <div className="flex-col pb-2 pl-1 group ">
         <Link href={`/shop/${product.slug}`}>
-        {product.images?.length > 0 ? (
+        {product?.images?.length > 0 ? (
       <Image
         width={310}
         height={310}
