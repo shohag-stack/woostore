@@ -3,7 +3,7 @@ import React from "react";
 import woostore from '../../public/WooStore.svg'
 import Image from "next/image";
 import Link from "next/link";
-import SearchInput from './Search'
+import SearchBox from './SearchBox'
 import ClientNavActions from "./ClientNavActions";
 
 
@@ -44,7 +44,8 @@ export default function Navigation({menuItems} : Props){
                             </div>
 
                             <div className=" hidden md:flex justify-center" >
-                                <SearchInput/>
+                                
+                                <SearchBox/>
                             </div>
 
                             <div className="hidden md:block text-center flex justify-center space-x-4 py-4 ">

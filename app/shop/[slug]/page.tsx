@@ -4,9 +4,9 @@ import SingleProductInfo from "@/components/Product/SingleProductInfo"
 import ReviewSection from "@/components/Product/Review/ReviewSection"
 import Feedback from "@/components/Product/Review/Feedback"
 
-export default async function Page({params}: {params : {slug:string}}) {
-    console.log(params.slug)
-    const product = await getProductsBySlug(params.slug)
+export default async function Page({params}: {params : Promise<{slug:string}>}) {
+    const resolvedParams = await params
+    const product = await getProductsBySlug(resolvedParams.slug)
     const discount = Math.round  (100 - ( product.sale_price / (product.regular_price / 100)))
 
     return (

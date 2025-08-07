@@ -2,32 +2,31 @@
 import {Search} from "lucide-react"
 import { useSearchParams,useRouter } from 'next/navigation'
 import { useDebounce } from '@uidotdev/usehooks'
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
+import { Suspense } from "react";
  
-export default function SearchInput() {
+ function SearchInbox() {
   
   const [searchTerm, setSearchTerm] = useState('')
   const debounceTerm:string = useDebounce(searchTerm, 500)
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const handleSearch = (term:string)=> {
-    const newParams = new URLSearchParams(searchParams)
-    if(term) {
-      newParams.delete("search")
-      newParams.set("search", term)
-    }
-    else {
-      newParams.delete("search")
-    }
-    router.replace(`/search?${newParams.toString()}`)
-    
+  const handleSearch = useCallback((term: string) => {
+  const newParams = new URLSearchParams(searchParams)
+  if (term) {
+    newParams.delete("search")
+    newParams.set("search", term)
+  } else {
+    newParams.delete("search")
   }
+  router.replace(`/search?${newParams.toString()}`)
+}, [router, searchParams])
 
   useEffect(()=>{
     if (debounceTerm === '' && !searchParams.get('search')) return
       handleSearch(debounceTerm)
-  }, [debounceTerm])
+  }, [debounceTerm,handleSearch,searchParams])
 
 
   return (
@@ -38,5 +37,13 @@ export default function SearchInput() {
       defaultValue={searchParams.toString()}
       className='py-4 px-20 placeholder:text-grey-100 focus:outline-none' name="search" placeholder='Search 150+ Products' />
     </div>
+  )
+}
+
+export default function SearchBox(){
+  return (
+    <Suspense>
+      <SearchInbox/>
+    </Suspense>
   )
 }

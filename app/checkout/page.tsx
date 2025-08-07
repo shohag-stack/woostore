@@ -12,7 +12,9 @@ export default function CheckoutPage(){
         }
         switch(step) {
             case 2 : return ( <ShippingInfo onBack={()=>setStep(1)} />)
+            default: return ( <Information onNext={()=>setStep(2)} />)
         }
+        
     }
     return (
 

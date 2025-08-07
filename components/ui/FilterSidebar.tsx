@@ -2,12 +2,13 @@
 
 import { useRouter, useSearchParams } from "next/navigation"
 import { Category } from "@/lib/types/types"
+import { Suspense } from "react"
 
 type catProps = {
   categories: Category[]
 }
 
-export default function FilterSidebar({categories} : catProps ) {
+function FilterSidebar({categories} : catProps ) {
   const router = useRouter()
   const searchParams = useSearchParams()  
     
@@ -42,4 +43,12 @@ export default function FilterSidebar({categories} : catProps ) {
       </ul>
     </aside>
     )
+}
+
+export default function FilterSidebarWithSuspense({categories}: catProps) {
+  return (
+    <Suspense fallback={<div className="w-1/4 pr-4">Loading filters...</div>}>
+      <FilterSidebar categories={categories} />
+    </Suspense>
+  )
 }

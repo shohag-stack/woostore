@@ -6,9 +6,10 @@ import { SidebarSekeleton } from "@/components/ui/SidebarSkeleton"
 import ShopPageSekeleton from "@/components/Product/ShopPageSekeleton"
 
 
-export default async function Page({searchParams}:{searchParams:{search? : string, category: string}}){
-    const productSlug = await searchParams.search
-    const categoryId = await searchParams.category
+export default async function Search({searchParams}:{searchParams:Promise<{search? : string, category: string}>}){
+    const resolvedParams = await searchParams
+    const productSlug = resolvedParams.search
+    const categoryId = resolvedParams.category
     return (
         <>
         <Banner/>

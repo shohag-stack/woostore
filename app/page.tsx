@@ -8,7 +8,6 @@ import HeroSection from "@/components/Section/HeroSection";
 
 export default async function Page() {
   
-
   return (
     <>
       <HeroSection/>

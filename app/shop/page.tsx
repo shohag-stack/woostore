@@ -6,8 +6,9 @@ import { SidebarSekeleton } from "@/components/ui/SidebarSkeleton"
 import ShopPageSekeleton from "@/components/Product/ShopPageSekeleton"
 
 
-export default async function Page({searchParams}:{searchParams:{category? : string}}){
-    const categoryId = searchParams.category
+export default async function Page({searchParams}:{searchParams:Promise<{category : string}>}){
+    const ResolvedParams = await searchParams
+    const categoryId = ResolvedParams.category
     return (
         <>
         <Banner/>
