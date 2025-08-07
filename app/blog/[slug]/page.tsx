@@ -4,11 +4,12 @@ import Image from "next/image"
 import { getBlogBySlug } from "@/lib/api/blogs"
 import { Blogs } from "@/lib/types/types"
 
-type Props = {
+type PageProps = {
    params: {
     slug: string;
    } 
 }
+
 
 export async function generateStaticParams() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts`)
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
     )
 }
 
-export async function generateMetadata({params}: Props): Promise<Metadata> {
+export async function generateMetadata({params}: {params: {slug:string}}): Promise<Metadata> {
 const {blog} = await getBlogBySlug(params.slug)
 return {
     title: blog.title.rendered,
@@ -29,7 +30,7 @@ return {
 
 }
 
-export default async function Page({params} : Props) {
+export default async function Page({params} : PageProps) {
 const {blog, featuredImage} = await getBlogBySlug(params.slug)
 console.log(featuredImage)
 if (!blog) notFound()
@@ -40,7 +41,7 @@ return(
         </h1>       
         {
 
-        <Image width={652} height={384} src={featuredImage.source_url} alt={featuredImage.alt_text || blog.title.rendered} />
+        <Image width={652} height={384} src={featuredImage?.source_url || "/fallback.jpg"} alt={featuredImage?.alt_text || blog.title.rendered} />
 
         } 
     </div>
