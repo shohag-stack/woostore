@@ -53,7 +53,7 @@ export default function Navigation({menuItems} : Props){
                                         <Link key={item.id} href={item.url}> { item.title }</Link>
                                     ))
                                 }
-                                <a href="/blog"> Blog</a>
+                                <Link href="/blog"> Blog</Link>
                             </div>
                     </div>
             </nav>
