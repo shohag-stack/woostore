@@ -5,7 +5,7 @@ import { useDebounce } from '@uidotdev/usehooks'
 import { useEffect, useState, useCallback } from "react"
 import { Suspense } from "react";
  
- function SearchInbox() {
+ export function SearchInbox() {
   
   const [searchTerm, setSearchTerm] = useState('')
   const debounceTerm:string = useDebounce(searchTerm, 500)
