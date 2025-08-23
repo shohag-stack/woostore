@@ -3,7 +3,7 @@
       "id": 1,
       "title": "Electronics",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/87c271cd-0c3f-4c81-a749-e13ea10b2f65?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiODdjMjcxY2QtMGMzZi00YzgxLWE3NDktZTEzZWExMGIyZjY1Il0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6InVUdnhuYk9JQXBYTEJsU1ZxcDN4QiIsImlhdCI6MTc1NTg5OTk1NSwiZXhwIjoxNzU1OTAwMDE1fQ.LgkHV6cydf7YyxjrDn3V8nmj9Ycatf8DH8DuC23SV38"
+        "src": "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/electronics",
       "slug": "electronics"
@@ -12,7 +12,7 @@
       "id": 2,
       "title": "Fashion",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/4e8b0a36-a179-4622-9ad4-81632de0162f?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiNGU4YjBhMzYtYTE3OS00NjIyLTlhZDQtODE2MzJkZTAxNjJmIl0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6ImMzdkVZMXdKUFNjb3lDQ05yS1A0QSIsImlhdCI6MTc1NTkwMDMyMCwiZXhwIjoxNzU1OTAwMzgwfQ.gjmibdnj-JIMr6q9hDCVbGAOR2v7wH1KCyaKbDabUpM"
+        "src": "https://images.unsplash.com/photo-1601049315503-07926a49f521?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/fashion",
       "slug": "fashion"
@@ -21,7 +21,7 @@
       "id": 3,
       "title": "Beauty & Wellness",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/9a1e190f-4fa0-425e-93c5-f87bde85d08f?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiOWExZTE5MGYtNGZhMC00MjVlLTkzYzUtZjg3YmRlODVkMDhmIl0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6ImR3UGJSMWdDLXhHZ0ozVDVPSkZvSCIsImlhdCI6MTc1NTkwMDIxNSwiZXhwIjoxNzU1OTAwMjc1fQ.iA69lturWztONUnMXmD71NMpocRapYmIninf5siy7-o"
+        "src": "https://images.unsplash.com/photo-1601049676869-702ea24cfd58?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/beauty",
       "slug": "beauty"
@@ -30,7 +30,7 @@
       "id": 4,
       "title": "Home & Living",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/b5fe232c-0a09-4a59-b905-2e1f3928a444?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiYjVmZTIzMmMtMGEwOS00YTU5LWI5MDUtMmUxZjM5MjhhNDQ0Il0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6ImY0UFEzcTZRUkNaR29LeUx4ckNmMyIsImlhdCI6MTc1NTkwMDAyNiwiZXhwIjoxNzU1OTAwMDg2fQ.McBYlO1vmxj00lXBx0UPgWmLEKubdk7YVfsqlFup06E"
+        "src": "https://images.unsplash.com/photo-1614858939963-d5631192baab?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/home",
       "slug": "home-living"
@@ -39,7 +39,7 @@
       "id": 5,
       "title": "Sports & Outdoors",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/49fa3764-77c5-4ce8-b12a-0849c345e012?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiNDlmYTM3NjQtNzdjNS00Y2U4LWIxMmEtMDg0OWMzNDVlMDEyIl0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6ImpucVFOek1aemlWV3ViTmM1YjBJSyIsImlhdCI6MTc1NTkwMDAzNiwiZXhwIjoxNzU1OTAwMDk2fQ.a6eoZEFDOCgMdxe8QDzCYf9RC6qiUUJyEIlFdubx2Eg"
+        "src": "https://images.unsplash.com/photo-1691162314643-7965f0e3acb8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/sports",
       "slug": "sports-outdoor"
@@ -48,7 +48,7 @@
       "id": 6,
       "title": "Books",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/4aaaaf22-2fb8-4cf3-a9b1-3fa9c9159446?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiNGFhYWFmMjItMmZiOC00Y2YzLWE5YjEtM2ZhOWM5MTU5NDQ2Il0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6IkM2MDNzNmRwRmVSYlpDaXVabTg1cyIsImlhdCI6MTc1NTkwMDA0OCwiZXhwIjoxNzU1OTAwMTA4fQ.5AyfAKaotYNH_h270CCPShsc98XatLh3gFqM6s2cU-I"
+        "src": "https://images.unsplash.com/photo-1614858818414-c2a9d5eeddea?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/books",
       "slug": "books"
@@ -57,7 +57,7 @@
       "id": 7,
       "title": "Toys & Games",
       "image": {
-        "src": "https://www.lummi.ai/api/render/image/36452e16-b6db-4fff-af8e-097c7d1a909d?token=eyJhbGciOiJIUzI1NiJ9.eyJpZHMiOlsiMzY0NTJlMTYtYjZkYi00ZmZmLWFmOGUtMDk3YzdkMWE5MDlkIl0sInJlc29sdXRpb24iOiJtZWRpdW0iLCJyZW5kZXJTcGVjcyI6eyJlZmZlY3RzIjp7InJlZnJhbWUiOnt9fX0sInNob3VsZEF1dG9Eb3dubG9hZCI6ZmFsc2UsImp0aSI6Ikw3R1ExS1hGdTh0dVQ5MTFaSVo1SyIsImlhdCI6MTc1NTkwMDE1NiwiZXhwIjoxNzU1OTAwMjE2fQ.HoMdxEq4kx1UJsFsG4ySMGkwfKBKGBNAQOm3ZVNKYMc"
+        "src": "https://images.unsplash.com/photo-1614859095586-796e902ecade?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       "url": "/category/toys",
       "slug": "toys-games"

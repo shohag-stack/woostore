@@ -26,13 +26,13 @@ export default function Navigation({menuItems} : Props){
                     Made for artist, Loved by all Shop Now
                 </div>
                     <div className="container mx-auto md:px-15">
-                            <div className=" grid md:grid md:grid-cols-3 items-center py-4 sm:flex-wrap ">
-                                        <div className="text-center md:text-left">
+                            <div className="flex justify-between md:grid md:grid-cols-3 items-center py-4 sm:flex-wrap ">
+                                        <div className="text-center md:text-left md:block hidden">
                                                 <Link href='/'>Services & Events</Link>
                                                 <Link href='/'>Stores</Link>
                                         </div>
 
-                                        <div className="flex md:justify-center justify-start">
+                                        <div className="flex md:justify-center text-center">
                                             <Link href='/'>
                                                 <Image alt="woostore" src={woostore}/>
                                             </Link> 
@@ -48,7 +48,7 @@ export default function Navigation({menuItems} : Props){
                                 <SearchBox/>
                             </div>
 
-                            <div className="hidden md:block text-center flex justify-center space-x-4 py-4 ">
+                            <div className="hidden text-center md:flex justify-center space-x-4 py-4 ">
                                 {
                                     menuItems.map((item)=> (
                                         <Link key={item.id} href={item.url}> { item.title }</Link>

@@ -10,11 +10,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+
       {
         protocol: 'https',
-        hostname: 'www.lummi.ai',
+        hostname: 'unsplash.com',
         port: '',
-        pathname: '/api/render/image/**',
+        pathname: '/**',
       }
     ]
   },

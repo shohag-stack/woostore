@@ -18,6 +18,7 @@ export default function CategoryCard({category}: categoryProps){
                     width={196}
                     height={241}
                     objectFit="cover"
+                    className="w-[196] h-[241] ooverflow-hidden"
                 />
             ) : (
                 <div style={{ width: 196, height: 241, background: '#f0f0f0' }}>
