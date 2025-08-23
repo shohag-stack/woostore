@@ -49,7 +49,7 @@ export default function Hero({hero}:Props) {
                                         
                                         <div className="absolute top-0 w-full h-full bg-black/20 flex flex-col justify-center items-center text-white text-center p-6">
                                             <div className="pb-5">
-                                                <h1 className="font-bold text-white"> {item.title}</h1>
+                                                <h1 className="font-bold text-white text-[45px] leading-12"> {item.title}</h1>
                                                 <h6 className="text-white">{item.sub_title}</h6>
                                             </div>
                                             <button className="btn-secondary">shop now</button>
