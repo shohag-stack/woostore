@@ -2,12 +2,12 @@ import React from "react"
 import BlogCard from "./BlogCard"
 import { Blogs } from "@/lib/types/types";
 import { getBlogs } from "@/lib/api/blogs";
+import data from "../../lib/data/blogs.json"
 import Link from "next/link";
 
 
 export default async function BlogSection(){
 
-    const data = await getBlogs()
     const blogs = data.slice(0,10)
 
     return (
@@ -18,7 +18,7 @@ export default async function BlogSection(){
         </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-7">
             {
-                blogs.map((blog:Blogs)=>(
+                blogs.map((blog)=>(
 
                     <div key={blog.id}>
                         <BlogCard blog={blog}/>

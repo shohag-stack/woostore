@@ -7,7 +7,7 @@ import { Product } from "@/lib/types/types"
 
 export default async function ProductListWrap({categoryId, productSlug} : {categoryId?: string, productSlug?: string}) {
 
-    const products = productSlug ?  await getProductsBySearch(productSlug) :await getProductsBycatId(categoryId)
+    const products = productSlug ?  await getProductsBySearch(productSlug) : await getProductsBycatId(categoryId)
     return (
         <div className="sm:w-3/4 px-3.5 sm:px-0">
             

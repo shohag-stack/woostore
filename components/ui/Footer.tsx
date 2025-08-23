@@ -1,14 +1,11 @@
 import Image from "next/image"
 import woostore from '../../public/WooStore.svg'
 import { FooterMenuItem, FooterData } from "../../lib/types/types"
+import footerData from "../../lib/data/footerData.json"
 
 async function getFooterData(): Promise<FooterData> {
-    const [customerCare, aboutUs, policies] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/customer_care`).then(res => res.json()),
-        fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/about_us`).then(res => res.json()),
-        fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/policies`).then(res => res.json())
-    ])
-    return { customerCare, aboutUs, policies }
+    
+    return { customerCare:footerData.customerCare, aboutUs:footerData.aboutUs, policies:footerData.policies }
 }
 
 

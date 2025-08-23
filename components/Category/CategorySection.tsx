@@ -11,10 +11,15 @@ import {
 } from "@/components/ui/carousel"
 
 
+
 export default async function CategorySection(){
 
     const homeData = await getHomePageData()
     console.log(homeData)
+
+    if (!homeData || homeData.categories.length === 0) {
+    return <p>No categories found.</p>
+  }
 
     return (
         <div className="container mx-auto py-15 px-4 md:px-0">
@@ -23,10 +28,10 @@ export default async function CategorySection(){
                 <a className="underline" href="">View all</a>
             </div>
         {
-            homeData?.categories.length <= 6 ? (
+            homeData.categories.length <= 6 ? (
                 <div className="grid grid-cols-1 md:grid-cols-6 gap-7">
             {
-                homeData?.categories.map((category:Category)=>(
+                homeData.categories.map((category:Category)=>(
                     <CategoryCard key={category.id} category={category}/>
                 ))
             }

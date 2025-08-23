@@ -26,7 +26,7 @@ export default function Card({ blog } : CardProps) {
   return (
     <Link href={`/blog/${blog.slug}`}>
       <div className="flex-col space-y-4">
-        <Image width={424} height={250} alt="product" src={imageUrl} className=" bg-accent object-cover"/>
+        <Image width={424} height={250} alt="product" src={imageUrl} className=" bg-accent object-cover w-[424] h-[250]"/>
         <div className="flex flex-col space-y-2">
             <h6 className="font-bold"> {blog.title.rendered}</h6>
             <div> {meta} </div>

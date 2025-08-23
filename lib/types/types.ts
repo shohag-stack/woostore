@@ -2,19 +2,31 @@ export type Product = {
   id: number;
   name: string;
   slug: string;
-  sale_price: number;
-  regular_price: number;
-  average_rating: number;
+  sale_price: string; // Changed from number to string to match JSON
+  regular_price: string; // Changed from number to string to match JSON
+  price: string; // Added this field that exists in JSON
+  average_rating: string; // Changed from number to string to match JSON
   short_description: string;
+  description: string; // Added this field from JSON
+  on_sale: boolean; // Added this useful field
+  stock_status: string; // Added this field
   images: {
+    id: number;
     src: string;
-  } [];
+    name: string;
+    alt: string;
+  }[];
+  categories: {
+    id: number;
+    name: string;
+    slug: string;
+  }[];
 }
 
 
 export type Category = {
   id: number;
-  name: string;
+  title: string;
   slug: string;
   image: {
     src: string;
@@ -48,11 +60,10 @@ export type Blogs= {
     source_url: string
   };
   _embedded ? : {
-      "wp:featuredmedia" ? : [
+      "wp:featuredmedia" ? : 
         {
           source_url: string;
-        }
-      ]
+        }[]
   }
 }
 

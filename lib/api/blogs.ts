@@ -1,17 +1,10 @@
 import { Blogs } from "../types/types"
+import post from "../data/blogs.json"
 
 // fetch blog post //
 export async function getBlogBySlug(slug:string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/posts?slug=${slug}`, {next: { revalidate: 3600 }})
-  const posts = await res.json();
-  if (!posts || posts.length === 0) return { blog: null, featuredImage: null };
-  const blog = posts[0]
-
-  let featuredImage = null
-  if (blog.featured_media) {
-    const imgRes = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API}/media/${blog.featured_media}`)
-    featuredImage = await imgRes.json()
-  }
+  const blog = post.find((b)=> b.slug === slug)
+  let featuredImage = blog?.featured_media
   return {blog, featuredImage};
 }
 

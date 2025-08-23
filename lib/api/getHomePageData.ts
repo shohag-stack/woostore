@@ -1,20 +1,19 @@
-
-// call all the apis for home-page data { recent products, featured products, categories }
-
-
-export async function getHomePageData() {
-    try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_WOOSTORE_HOMEPAGE_DATA}`, {
-            next: {
-                revalidate: 60
-            }
-        })
-        return res.json()
-    }
-
-    catch(err) {
-        console.log(err)
-    }
+import { Category } from "../types/types"
+import categories from "../data/categories.json"
+import { Product } from "../types/types"
+import product from '../data/product.json'
+type HomePageData = {
+  categories: Category[]
+  featuredProducts: Product
 }
 
+export async function getHomePageData(): Promise<HomePageData | undefined> {
+  try {
+    return {categories, featuredProducts:product}
+  } 
+  
+  catch (err) {
+    console.log(err)
 
+  }
+}

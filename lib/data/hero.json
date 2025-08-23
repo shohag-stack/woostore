@@ -1,0 +1,14 @@
+ [
+        {
+            "title": "Return to your center",
+            "sub_title": "A Green Beauty & wellness Boutique",
+            "media_url": "./assets/video.mp4",
+            "type": "video"
+        },
+        {
+            "title": "return to your center 1",
+            "sub_title": "A Green Beauty & wellness Boutique",
+            "media_url": "./assets/second.mp4",
+            "type": "video"
+        }
+    ]
