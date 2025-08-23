@@ -1,9 +1,16 @@
 import ProductSection from "../Product/ProductSection";
 import { getHomePageData } from "@/lib/api/getHomePageData";
+import featuredProducts from "../../lib/data/product.json"
+
 
 export default async function FeaturedProducts(){
-    const homeData = await getHomePageData()
+
+     if (!featuredProducts || !featuredProducts) {
+        return <p>No featured products found.</p>
+    }
+
+
     return (
-        <ProductSection products={homeData.featuredProducts} title="Featured Products" cta="View all"/>
+        <ProductSection products={featuredProducts} title="Featured Products" cta="View all"/>
     )
 }

@@ -1,6 +1,7 @@
 'use client'
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import Image from "next/image";
 
 type HeroData = {
   media_url: string;
@@ -44,6 +45,8 @@ export default function Hero({hero}:Props) {
                                             className="w-full h-full object-cover"
                                             src={item.media_url}>
                                         </video>
+                                        {/* <Image src={item.media_url} alt={item.title} className="w-full" width={1080} height={1920}/> */}
+                                        
                                         <div className="absolute top-0 w-full h-full bg-black/20 flex flex-col justify-center items-center text-white text-center p-6">
                                             <div className="pb-5">
                                                 <h1 className="font-bold text-white"> {item.title}</h1>

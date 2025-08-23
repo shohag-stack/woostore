@@ -1,0 +1,73 @@
+{
+  "customerCare": [
+    {
+      "id": "1",
+      "title": "Help & Contact Us",
+      "url": "/help-contact"
+    },
+    {
+      "id": "2", 
+      "title": "Shipping & Delivery",
+      "url": "/shipping-delivery"
+    },
+    {
+      "id": "3",
+      "title": "Returns & Exchanges", 
+      "url": "/returns-exchanges"
+    },
+    {
+      "id": "4",
+      "title": "Payment & Security",
+      "url": "/payment-security"
+    },
+    {
+      "id": "5",
+      "title": "Online Orders",
+      "url": "/online-orders"
+    }
+  ],
+  "aboutUs": [
+    {
+      "id": "6",
+      "title": "Our Story",
+      "url": "/our-story"
+    },
+    {
+      "id": "7",
+      "title": "Beauty Loop", 
+      "url": "/beauty-loop"
+    },
+    {
+      "id": "8",
+      "title": "Careers",
+      "url": "/careers"
+    },
+    {
+      "id": "9",
+      "title": "Location",
+      "url": "/location"
+    }
+  ],
+  "policies": [
+    {
+      "id": "10",
+      "title": "Privacy",
+      "url": "/privacy-policy"
+    },
+    {
+      "id": "11",
+      "title": "Refund",
+      "url": "/refund-policy"
+    },
+    {
+      "id": "12", 
+      "title": "Shipping",
+      "url": "/shipping-policy"
+    },
+    {
+      "id": "13",
+      "title": "Terms of Services",
+      "url": "/terms-of-service"
+    }
+  ]
+}

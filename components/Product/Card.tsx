@@ -17,8 +17,10 @@ export default function Card({product} : CardProps) {
 
   const [isLoading, setIsLoading] = useState(false)
   const [added, setAdded] = useState(false)
-  const totalStars = product.average_rating
-  const discount = Math.round(((product.regular_price - product.sale_price) / product.regular_price) * 100);
+  const totalStars = Math.round(Number(product.average_rating)) || 1;
+  const regularPrice = Number(product.regular_price) || 0;
+  const salePrice = Number(product.sale_price) || 0;
+  const discount = regularPrice > 0 ? Math.round(((regularPrice - salePrice) / regularPrice) * 100) : 0;  
   const {addToCart} = useCart()
 
   const handleAddtoCart = async ()=> {
@@ -30,7 +32,7 @@ export default function Card({product} : CardProps) {
     addToCart({
             id: product?.id,
             title: product?.name,
-            price: product?.sale_price,
+            price: parseInt(product?.sale_price),
             quantity: 1,
             image: product?.images[0]?.src
           })

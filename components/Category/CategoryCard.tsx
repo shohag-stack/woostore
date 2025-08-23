@@ -14,7 +14,7 @@ export default function CategoryCard({category}: categoryProps){
             {category.image ? (
                 <Image
                     src={category.image.src}
-                    alt={category.name}
+                    alt={category.title}
                     width={196}
                     height={241}
                     objectFit="cover"
@@ -27,7 +27,7 @@ export default function CategoryCard({category}: categoryProps){
 
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white bg-opacity-90 text-black text-center py-2 font-medium">
                 <p className="text-md text-primary">
-                    {category.name}
+                    {category.title}
                 </p>
             </div>
         </div>

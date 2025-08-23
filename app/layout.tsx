@@ -4,6 +4,7 @@ import "./globals.css";
 import "../style/style.css"
 import {CartProvider} from "../Context/CartContext"
 import Footer from "@/components/ui/Footer";
+import data from "../lib/data/menu.json"
 
 export const metadata: Metadata = {
   title: "WooStore",
@@ -16,14 +17,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-   const res = await fetch(`${process.env.NEXT_PUBLIC_WP_NAV_MENU_ITEMS}/primary`, {
-    next: {
-      revalidate: 60 * 60,
-    },
-  });
-
-  const data = await res.json();
 
   return (
     <CartProvider>
