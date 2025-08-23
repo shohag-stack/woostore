@@ -5,7 +5,7 @@ import { Category } from "@/lib/types/types"
 import { Suspense } from "react"
 
 type catProps = {
-  categories: Category[]
+  categories: Category[] | undefined
 }
 
 function FilterSidebar({categories} : catProps ) {
@@ -30,7 +30,7 @@ function FilterSidebar({categories} : catProps ) {
         <aside className="left-filter w-full pr-4">
       <h5 className="font-semibold mb-2">Categories</h5>
       <ul>
-        {categories.map((cat:Category) => (
+        {categories?.map((cat:Category) => (
           <li key={cat.id}>
             <button
               onClick={() => handleCategoryClick(cat.id)}

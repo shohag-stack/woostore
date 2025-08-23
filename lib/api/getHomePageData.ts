@@ -3,8 +3,8 @@ import categories from "../data/categories.json"
 import { Product } from "../types/types"
 import product from '../data/product.json'
 type HomePageData = {
-  categories: Category[]
-  featuredProducts: Product
+  categories: Category[] | undefined
+  featuredProducts: Product[]
 }
 
 export async function getHomePageData(): Promise<HomePageData | undefined> {

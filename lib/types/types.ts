@@ -21,6 +21,7 @@ export type Product = {
     name: string;
     slug: string;
   }[];
+  global_unique_id: string
 }
 
 
