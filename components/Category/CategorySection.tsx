@@ -17,9 +17,9 @@ export default async function CategorySection(){
     const homeData = await getHomePageData()
     console.log(homeData)
 
-    if (!homeData || homeData.categories.length === 0) {
-    return <p>No categories found.</p>
-  }
+    if (!homeData?.categories || homeData.categories.length === 0) {
+  return <p>No categories found.</p>
+}
 
     return (
         <div className="container mx-auto py-15 px-4 md:px-0">

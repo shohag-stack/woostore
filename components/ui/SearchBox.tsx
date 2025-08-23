@@ -21,12 +21,17 @@ import { Suspense } from "react";
     newParams.delete("search")
   }
   router.replace(`/search?${newParams.toString()}`)
-}, [router, searchParams])
+}, [router])
+
+useEffect(() => {
+  setSearchTerm(searchParams.get("search") || "")
+}, [searchParams])
 
   useEffect(()=>{
-    if (debounceTerm === '' && !searchParams.get('search')) return
+    const currentSearch = searchParams.get("search") || "";
+    if (debounceTerm === currentSearch) return
       handleSearch(debounceTerm)
-  }, [debounceTerm,handleSearch,searchParams])
+  }, [debounceTerm,handleSearch])
 
 
   return (
@@ -34,7 +39,7 @@ import { Suspense } from "react";
         <Search className="w-5 h-5 absolute left-10 top-1/2 transform -translate-y-1/2 text-primary" />
       <input 
       onChange={(e)=>setSearchTerm(e.target.value)}
-      defaultValue={searchParams.toString()}
+      value={searchTerm}
       className='py-4 px-20 placeholder:text-grey-100 focus:outline-none' name="search" placeholder='Search 150+ Products' />
     </div>
   )
