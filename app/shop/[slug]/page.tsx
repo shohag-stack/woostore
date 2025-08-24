@@ -27,17 +27,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
 
   return (
-    <div className="container mx-auto px-4 sm:px-0">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 sm:gap-16 gap-0">
+    <div className="container mx-auto px-4 md:px-0 sm:px-10">
+      <div className="flex sm:gap-16 gap-0">
         {product?.images?.[0]?.src ? (
-          <Image
-            className="w-[652] h-[652]"
+          <div className=" w-[300] h-[200] sm:w-[200] sm:h-[50] md:w-[652] md:h-[350] lg:w-[652] lg:h-[450] xl:w-[500] xl:h-[400] overflow-hidden relative object-cover">
+            <Image
             src={product?.images[0]?.src}
             alt={product?.name}
-            width={652}
-            height={652}
-            
+            fill
+            objectFit="cover"
           />
+          </div>
         ) : (
           <div className="w-full h-[400px] bg-gray-100 flex items-center justify-center text-sm text-gray-500">
             No image available

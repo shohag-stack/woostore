@@ -10,7 +10,7 @@ export default function Banner() {
             {banner.map((ban, index) => (
                 <div
                 key={index}
-                className="h-[400px] bg-cover bg-center flex flex-col justify-center items-start p-10 text-white"
+                className="h-[400px] bg-cover bg-center flex flex-col justify-center items-start px-3 md:p-10 text-white"
                 style={{ backgroundImage: `url(${ban})` }}
                 >
                 <h2 className=" text-white mb-2">The best beauty experience</h2>

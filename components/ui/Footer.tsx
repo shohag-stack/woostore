@@ -2,6 +2,9 @@ import Image from "next/image"
 import woostore from '../../public/WooStore.svg'
 import { FooterMenuItem, FooterData } from "../../lib/types/types"
 import footerData from "../../lib/data/footerData.json"
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 async function getFooterData(): Promise<FooterData> {
     
@@ -14,6 +17,14 @@ export default async function Footer() {
     const appStore = [
         "/assets/appstore.svg",
         "/assets/googlePlay.svg"
+    ]
+
+    const payment = [
+        "/assets/apple.svg",
+        "/assets/master.svg",
+        "/assets/masterCard.svg",
+        "/assets/paypal.svg",
+        "/assets/visa.svg"
     ]
 
     const { customerCare, aboutUs, policies } = await getFooterData()
@@ -78,37 +89,38 @@ export default async function Footer() {
 
                     <div className="text-center flex flex-col items-center">
                         <Image src={woostore} width={133} height={36} alt="woostore" />
-                        <h3>Your Unique Complex of Nature Components</h3>
+                        <h3 className="text-lg text-left">Your Unique Complex of Nature Components</h3>
                     </div>
 
                 </div>
 
-                <div className="footer-social py-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1">
-                    <div className="shrink-3/2">
+                <div className="footer-social py-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-10 md:gap-40">
+                    <div className="flex-2/3 py-3">
                         <p>commits to being allies and working in solidarity with First Nations people. We recognise their ongoing connection to this beautiful country, and we pay our respects to Elders, past and present. We acknowledge the land on which we live and work always was, and always will be, Aboriginal Land.</p>
                     </div>
-                    <div className="flex gap-10">
+                    <div className="flex flex-row items-center gap-10">
                         <h6>Connect</h6>
-                        <div className="flex gap-2">
-                            <p>facebook</p>
-                            <p>twitter</p>
+                        <div className="flex py-4 gap-2">
+                            <FaFacebook size={20}/>
+                            <FaInstagram size={20}/>
+                            <FaYoutube size={20}/>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="footer-social-container border-t-1 py-5">
-                <div className="footer-copyright container mx-auto flex justify-between">
+                <div className="footer-copyright container mx-auto flex flex-col md:flex-row gap-4 justify-between">
                     <div>
                         <p>© Copyright WooStore All Rights Reserved</p>
                     </div>
 
-                    <div className="flex gap-5">
-                        <p>visa</p>
-                        <p>visa</p>
-                        <p>visa</p>
-                        <p>visa</p>
-                        <p>visa</p>
+                    <div className="flex flex-row gap-2">
+                        {
+                            payment.map((item,idx)=>{
+                                return (<div key={idx}> <Image src={item} width={28} height={24} alt={`payment${idx}`} /> </div>)
+                            })
+                        }
                     </div>
                 </div>
             </div>
